@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaviya Gopal — Financial Engineer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+:root{--bg:#070b14;--sf:#0c1220;--sf2:#111827;--bd:#1a2540;--bd2:#243050;--cy:#00d4ff;--am:#f0a500;--wh:#f4f6fa;--mu:#4a5878;--tx:#8a9bb8;--gn:#00e676;--rd:#ff4757;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;}
+.gbg{position:fixed;inset:0;z-index:0;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:48px 48px;opacity:.2;pointer-events:none;}
+.gbg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,transparent 30%,var(--bg) 100%);}
+#tkbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--sf);border-bottom:1px solid var(--bd2);height:34px;overflow:hidden;display:flex;align-items:center;}
+.tktrack{display:flex;animation:tks 45s linear infinite;white-space:nowrap;}
+@keyframes tks{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tki{display:inline-flex;align-items:center;gap:8px;padding:0 24px;border-right:1px solid var(--bd);font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.5px;flex-shrink:0;}
+.tks{color:var(--wh);font-weight:500;}.tkv{color:var(--tx);}.tku{color:var(--gn);}.tkd{color:var(--rd);}
+nav{position:fixed;top:34px;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 56px;transition:all .4s;}
+nav.sc{background:rgba(7,11,20,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd2);}
+.nlogo{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--cy);text-decoration:none;letter-spacing:2px;display:flex;align-items:center;gap:8px;}
+.nb{color:var(--am);animation:bl 1.1s step-end infinite;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.nlinks{display:flex;gap:40px;list-style:none;}
+.nlinks a{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--mu);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color .2s;position:relative;}
+.nlinks a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cy);transition:width .25s;}
+.nlinks a:hover{color:var(--cy);}.nlinks a:hover::after{width:100%;}
+#hero{position:relative;z-index:1;min-height:100vh;padding:170px 56px 100px;display:grid;grid-template-columns:1fr 360px;gap:60px;max-width:1300px;margin:0 auto;align-items:center;}
+.hst{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--gn);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;padding:7px 14px;border:1px solid rgba(0,230,118,.2);background:rgba(0,230,118,.04);}
+.sd{width:6px;height:6px;border-radius:50%;background:var(--gn);animation:pu 2s ease-in-out infinite;}
+@keyframes pu{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+h1.hn{font-family:'Syne',sans-serif;font-size:clamp(3.8rem,8vw,7.5rem);font-weight:800;line-height:.88;letter-spacing:-4px;color:var(--wh);margin-bottom:28px;}
+h1.hn .ac{color:var(--cy);}
+.hsub{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--am);letter-spacing:1px;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.hsub::before{content:'//';color:var(--mu);}
+.hbio{font-size:.92rem;color:var(--tx);max-width:500px;line-height:1.85;margin-bottom:44px;}
+.hact{display:flex;gap:12px;flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--cy);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);}
+.btnp:hover{background:#33ddff;transform:translateY(-2px);}
+.btng{display:inline-flex;align-items:center;padding:12px 28px;border:1px solid var(--bd2);color:var(--tx);font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;}
+.btng:hover{border-color:var(--cy);color:var(--cy);}
+.hpanel{background:var(--sf);border:1px solid var(--bd2);position:relative;overflow:hidden;}
+.hpanel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cy),var(--am),transparent);}
+.ph{padding:12px 18px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:7px;}
+.pd2{width:8px;height:8px;border-radius:50%;}
+.ptitle{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mu);letter-spacing:1.5px;margin-left:4px;}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-bottom:1px solid var(--bd);font-family:'JetBrains Mono',monospace;font-size:.64rem;}
+.dr:last-child{border-bottom:none;}
+.dk{color:var(--mu);}.dv{color:var(--wh);font-weight:500;text-align:right;}
+.dvc{color:var(--cy);}.dva{color:var(--am);}.dvg{color:var(--gn);}
+.sec{position:relative;z-index:1;max-width:1300px;margin:0 auto;padding:100px 56px;border-top:1px solid var(--bd2);}
+.ey{display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--cy);letter-spacing:3px;text-transform:uppercase;margin-bottom:56px;}
+.ey .en{color:var(--mu);}.ey::after{content:'';flex:0 0 60px;height:1px;background:var(--bd2);}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.ah{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:700;color:var(--wh);line-height:1.2;letter-spacing:-1px;margin-bottom:28px;}
+.ah .ahc{color:var(--cy);}.ah .aha{color:var(--am);}
+.ap{font-size:.88rem;color:var(--tx);line-height:1.85;margin-bottom:16px;}
+.sl{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--mu);letter-spacing:2px;text-transform:uppercase;margin:32px 0 12px;}
+.skl{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.6rem;padding:4px 11px;border:1px solid var(--bd2);color:var(--tx);letter-spacing:.5px;transition:all .2s;}
+.chip:hover{border-color:var(--cy);color:var(--cy);}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd2);border:1px solid var(--bd2);}
+.sc2{background:var(--sf);padding:26px 22px;position:relative;overflow:hidden;}
+.sc2::after{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:var(--cy);opacity:0;transition:opacity .2s;}
+.sc2:hover::after{opacity:1;}
+.sn{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--wh);line-height:1;margin-bottom:6px;}
+.sn sup{font-size:1.1rem;color:var(--cy);vertical-align:super;}
+.sla{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--mu);letter-spacing:1.5px;text-transform:uppercase;}
+.tline{position:relative;padding-left:32px;}
+.tline::before{content:'';position:absolute;top:8px;bottom:8px;left:0;width:1px;background:linear-gradient(to bottom,var(--cy),transparent);}
+.tl{position:relative;margin-bottom:52px;opacity:0;transform:translateX(-16px);transition:opacity .6s ease,transform .6s ease;}
+.tl.visible{opacity:1;transform:translateX(0);}
+.tl::before{content:'';position:absolute;left:-38px;top:7px;width:12px;height:12px;border:2px solid var(--cy);background:var(--bg);transform:rotate(45deg);transition:background .2s;}
+.tl:hover::before{background:var(--cy);}
+.tlh{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:10px;flex-wrap:wrap;}
+.tlr{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--wh);letter-spacing:-.3px;}
+.tlrt{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.tlco{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--cy);}
+.tldt{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mu);letter-spacing:1px;}
+.tld{font-size:.85rem;color:var(--tx);line-height:1.75;margin-bottom:12px;}
+.tltags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.57rem;padding:3px 9px;border:1px solid var(--bd2);color:var(--mu);letter-spacing:.5px;}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bd);}
+.pc{background:var(--sf);padding:38px 34px;display:flex;flex-direction:column;text-decoration:none;position:relative;overflow:hidden;transition:background .25s;}
+.pc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cy),transparent);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.pc:hover{background:var(--sf2);}.pc:hover::after{transform:scaleX(1);}
+.pcw{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:56px;align-items:start;}
+.ptype{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--cy);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;}
+.ptitle2{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--wh);letter-spacing:-.4px;line-height:1.25;margin-bottom:12px;}
+.pdesc{font-size:.84rem;color:var(--tx);line-height:1.75;flex:1;margin-bottom:26px;}
+.plink{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--am);letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-top:auto;transition:gap .2s;}
+.pc:hover .plink{gap:14px;}.plink::after{content:'→';}
+.tmets{display:flex;flex-direction:column;border:1px solid var(--bd2);min-width:200px;align-self:start;flex-shrink:0;}
+.tm{padding:14px 18px;border-bottom:1px solid var(--bd);}
+.tm:last-child{border-bottom:none;}
+.tmk{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:var(--mu);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.tmv{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--wh);line-height:1.3;}
+.awb{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--am);letter-spacing:2px;padding:6px 12px;border:1px solid rgba(240,165,0,.3);background:rgba(240,165,0,.05);margin-top:auto;width:fit-content;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.ch{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--wh);letter-spacing:-2px;line-height:1.1;margin-bottom:18px;}
+.ch .chc{color:var(--cy);}
+.cp{font-size:.87rem;color:var(--tx);line-height:1.8;margin-bottom:32px;}
+.av{padding:18px 22px;border:1px solid rgba(0,230,118,.22);background:rgba(0,230,118,.03);}
+.avr{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gn);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px;}
+.avd{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mu);padding-left:16px;}
+.clinks{display:flex;flex-direction:column;gap:2px;}
+.cl{display:flex;justify-content:space-between;align-items:center;padding:17px 20px;background:var(--sf);border:1px solid var(--bd2);text-decoration:none;transition:all .2s;position:relative;overflow:hidden;}
+.cl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cy);transform:scaleY(0);transition:transform .2s;}
+.cl:hover{background:var(--sf2);}.cl:hover::before{transform:scaleY(1);}
+.cll{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--mu);letter-spacing:2px;text-transform:uppercase;}
+.clv{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--wh);display:flex;align-items:center;gap:8px;transition:color .2s;}
+.cl:hover .clv{color:var(--cy);}.clv::after{content:'↗';font-size:.6rem;color:var(--mu);}
+footer{position:relative;z-index:1;border-top:1px solid var(--bd);padding:22px 56px;display:flex;justify-content:space-between;align-items:center;}
+.ft{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--mu);letter-spacing:1px;}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.rv.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){
+  nav{padding:14px 24px;}.nlinks{display:none;}
+  #hero{grid-template-columns:1fr;padding:160px 24px 80px;gap:40px;}
+  .sec{padding:70px 24px;}
+  .ag,.cgrid{grid-template-columns:1fr;gap:40px;}
+  .pgrid{grid-template-columns:1fr;}
+  .pcw{grid-template-columns:1fr;gap:24px;}
+  .tmets{min-width:auto;}
+  footer{flex-direction:column;gap:8px;padding:18px 24px;text-align:center;}
+  .sgrid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="gbg"></div>
+
+<div id="tkbar"><div class="tktrack" id="tk"></div></div>
+
+<nav id="nav">
+  <a href="#hero" class="nlogo"><span class="nb">&gt;</span> kaviya.gopal</a>
+  <ul class="nlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="hero">
+  <div>
+    <div class="hst"><span class="sd"></span>Open to roles &middot; Available Aug 2026</div>
+    <h1 class="hn">Kaviya<br>Go<span class="ac">pal</span></h1>
+    <div class="hsub">Financial Engineer &middot; Quantum ML Researcher</div>
+    <p class="hbio">MSc Financial Engineering from Karlsruhe Institute of Technology &mdash; working at the intersection of capital markets, securities settlement, data analytics, and corporate finance. Former JPMorgan CIB. Mercedes-Benz AI Challenge winner 2024.</p>
+    <div class="hact">
+      <a href="#projects" class="btnp">View Projects</a>
+      <a href="https://www.linkedin.com/in/kaviya-gopal-a9a6361a0/" target="_blank" class="btng">LinkedIn &#8599;</a>
+    </div>
+  </div>
+  <div class="hpanel">
+    <div class="ph">
+      <span class="pd2" style="background:#ff5f57"></span>
+      <span class="pd2" style="background:#febc2e"></span>
+      <span class="pd2" style="background:#28c840"></span>
+      <span class="ptitle">profile.json</span>
+    </div>
+    <div>
+      <div class="dr"><span class="dk">name</span><span class="dv dvc">"Kaviya Gopal"</span></div>
+      <div class="dr"><span class="dk">degree</span><span class="dv">"MSc FinEng &middot; KIT"</span></div>
+      <div class="dr"><span class="dk">domain</span><span class="dv">"Finance &middot; BI &middot; QuantML"</span></div>
+      <div class="dr"><span class="dk">prev_employer</span><span class="dv dva">"JPMorgan CIB"</span></div>
+      <div class="dr"><span class="dk">thesis</span><span class="dv">"QSVM vs LSTM &middot; S&amp;P500"</span></div>
+      <div class="dr"><span class="dk">award</span><span class="dv dva">"Mercedes-Benz AI 2024"</span></div>
+      <div class="dr"><span class="dk">location</span><span class="dv">"Karlsruhe, DE"</span></div>
+      <div class="dr"><span class="dk">available</span><span class="dv dvg">"Aug 2026"</span></div>
+      <div class="dr"><span class="dk">languages</span><span class="dv">"EN &middot; DE (B1&rarr;B2)"</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="sec">
+  <div class="ey"><span class="en">01</span> About</div>
+  <div class="ag">
+    <div>
+      <h2 class="ah">Where <span class="ahc">settlement ops</span> meets <span class="aha">quantum research.</span></h2>
+      <p class="ap">I'm a financial engineer with hands-on experience in the post-trade infrastructure that keeps global markets running &mdash; securities settlement, fail management, SWIFT, Clearstream Xact &mdash; combined with research into the emerging layer above it: quantum ML applied to financial forecasting.</p>
+      <p class="ap">My KIT thesis produced one of the first empirical benchmarks of Quantum Neural Networks and QSVMs against classical LSTM models on real S&amp;P 500 cash flow data across seven sectors. Findings show nuanced, sector-dependent performance that challenges the quantum hype narrative.</p>
+      <p class="ap">Currently targeting roles in post-trade technology, settlement operations, and corporate finance across Germany. Available from August 2026.</p>
+      <div class="sl">Technical Stack</div>
+      <div class="skl">
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Snowflake</span>
+        <span class="chip">AWS S3</span><span class="chip">Tableau</span><span class="chip">Clearstream Xact</span>
+        <span class="chip">SWIFT</span><span class="chip">QSVM</span><span class="chip">LSTM</span>
+        <span class="chip">Excel &middot; VBA</span><span class="chip">ETL Pipelines</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgrid rv">
+        <div class="sc2"><div class="sn">2<sup>+</sup></div><div class="sla">Years in financial services</div></div>
+        <div class="sc2"><div class="sn">7</div><div class="sla">S&amp;P 500 sectors modelled</div></div>
+        <div class="sc2"><div class="sn">4</div><div class="sla">ML models benchmarked</div></div>
+        <div class="sc2"><div class="sn">1<sup>st</sup></div><div class="sla">Mercedes-Benz AI 2024</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="sec">
+  <div class="ey"><span class="en">02</span> Experience</div>
+  <div class="tline">
+    <div class="tl">
+      <div class="tlh">
+        <div class="tlr">Private Equity Analyst &mdash; Internship</div>
+        <div class="tlrt"><span class="tlco">GAIN Pro &middot; Frankfurt, DE</span><span class="tldt">Jun 2025 &ndash; Aug 2025</span></div>
+      </div>
+      <p class="tld">Conducted financial analysis across 60+ companies &mdash; evaluating capital structures, credit profiles, M&amp;A histories, and operational drivers to support deal evaluation for institutional PE clients. Developed investment theses and strategic assessments using AI-supported research tools, translating complex financial data into actionable client recommendations. Built client-facing company profiles and deal summaries for senior PE stakeholders.</p>
+      <div class="tltags">
+        <span class="tag">Capital Structure Analysis</span><span class="tag">Credit Profiles</span><span class="tag">M&amp;A</span><span class="tag">Investment Theses</span><span class="tag">Deal Evaluation</span>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tlh">
+        <div class="tlr">Working Student &mdash; Business Intelligence</div>
+        <div class="tlrt"><span class="tlco">Destination Solutions &middot; Munich, DE</span><span class="tldt">Oct 2024 &ndash; Apr 2025</span></div>
+      </div>
+      <p class="tld">Delivered weekly financial performance reports to senior leadership covering &euro;50,000+ in booking revenue and 150+ transactions across Booking.com, Airbnb, Holidu, and Check24 &mdash; including deep-dive variance analyses highlighting revenue drivers and anomalies. Built and maintained financial analytics pipelines (Python, Snowflake, S3, Tableau), reducing manual reporting effort by ~40% and enabling near-real-time business performance visibility for the Finance leadership team.</p>
+      <div class="tltags">
+        <span class="tag">Python</span><span class="tag">Snowflake</span><span class="tag">AWS S3</span><span class="tag">Tableau</span><span class="tag">Variance Analysis</span><span class="tag">ETL Pipelines</span>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tlh">
+        <div class="tlr">Financial Analyst &mdash; Middle Office (CIB)</div>
+        <div class="tlrt"><span class="tlco">JPMorgan Chase &middot; India</span><span class="tldt">Aug 2021 &ndash; Jul 2022</span></div>
+      </div>
+      <p class="tld">Managed financial position reconciliations across derivatives, FX, fixed income, and cash products &mdash; ensuring 100% accuracy of client investment statements across global banking mandates. Built KPI/KRI dashboards in Alteryx and Tableau for senior CIB management. Developed deep understanding of banking operations, financial instrument lifecycles, and credit/settlement workflows across institutional client portfolios.</p>
+      <div class="tltags">
+        <span class="tag">Position Reconciliation</span><span class="tag">Derivatives</span><span class="tag">FX</span><span class="tag">Fixed Income</span><span class="tag">Alteryx</span><span class="tag">Tableau</span><span class="tag">KPI Dashboards</span>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tlh">
+        <div class="tlr">Founder</div>
+        <div class="tlrt"><span class="tlco">QuantIF</span><span class="tldt">2024 &ndash; Present</span></div>
+      </div>
+      <p class="tld">Founded QuantIF &mdash; a fintech research initiative exploring quantum-classical hybrid models in financial applications. Built proof-of-concept tooling and developed early benchmarking methodology applied in KIT thesis research.</p>
+      <div class="tltags">
+        <span class="tag">Quantum ML</span><span class="tag">Fintech Research</span><span class="tag">Quant Finance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="sec">
+  <div class="ey"><span class="en">03</span> Projects</div>
+  <div class="pgrid">
+    <a href="https://github.com/Kaviya04/Cash-Flow-Forecasting-" target="_blank" class="pc pcw rv">
+      <div>
+        <div class="ptype">MSc Thesis &middot; KIT &middot; 2025</div>
+        <h3 class="ptitle2">Quantum vs Classical ML for Cash Flow Forecasting</h3>
+        <p class="pdesc">Benchmarked Linear Regression, LSTM, Quantum SVM, and Quantum Neural Networks on S&amp;P 500 cash flow data across seven market sectors. Produced empirical RMSE, MAE, and R&sup2; comparisons &mdash; one of the first direct evaluations of quantum ML on financial time series. Findings reveal sector-dependent patterns that challenge simple quantum advantage claims.</p>
+        <span class="plink">View on GitHub</span>
+      </div>
+      <div class="tmets">
+        <div class="tm"><div class="tmk">Models</div><div class="tmv">4</div></div>
+        <div class="tm"><div class="tmk">Sectors</div><div class="tmv">7</div></div>
+        <div class="tm"><div class="tmk">Dataset</div><div class="tmv">S&amp;P 500</div></div>
+        <div class="tm"><div class="tmk">Methods</div><div class="tmv" style="font-size:.82rem">QSVM &middot; QNN<br>LSTM &middot; LinReg</div></div>
+        <div class="tm"><div class="tmk">Metrics</div><div class="tmv" style="font-size:.82rem">RMSE &middot; MAE &middot; R&sup2;</div></div>
+      </div>
+    </a>
+    <a href="https://github.com/Kaviya04/financial-analysis-dashboard" target="_blank" class="pc rv">
+      <div class="ptype">Project &middot; 2025</div>
+      <h3 class="ptitle2">Financial Analysis Dashboard</h3>
+      <p class="pdesc">Interactive analytics dashboard built on real Bundesanzeiger data. Features variance analysis, rolling KPI tracking, and scenario modelling &mdash; designed for Strategic Finance and IR workflows. Full pipeline from data ingestion to visualization.</p>
+      <span class="plink">View on GitHub</span>
+    </a>
+    <div class="pc rv" style="cursor:default;">
+      <div class="ptype">Award &middot; 2024</div>
+      <h3 class="ptitle2">Mercedes-Benz AI Innovation Challenge</h3>
+      <p class="pdesc">1st place among graduate-level competitors. Developed an AI-driven solution for operational efficiency in automotive supply chain finance. Presented to Mercedes-Benz leadership and an industry judging panel.</p>
+      <div class="awb">&#127942; First Place</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="ey"><span class="en">04</span> Contact</div>
+  <div class="cgrid">
+    <div class="rv">
+      <h2 class="ch">Let's talk <span class="chc">post-trade.</span></h2>
+      <p class="cp">Actively looking for roles in settlement operations, post-trade technology, and corporate finance across Germany. Open to internships and full-time positions starting August 2026.</p>
+      <div class="av">
+        <div class="avr"><span class="sd"></span>Available from August 2026</div>
+        <div class="avd">Based in Karlsruhe &middot; Open to relocation across Germany</div>
+      </div>
+    </div>
+    <div class="clinks rv">
+      <a href="https://www.linkedin.com/in/kaviya-gopal-a9a6361a0/" target="_blank" class="cl">
+        <span class="cll">LinkedIn</span><span class="clv">Kaviya Gopal</span>
+      </a>
+      <a href="https://github.com/Kaviya04" target="_blank" class="cl">
+        <span class="cll">GitHub</span><span class="clv">Kaviya04</span>
+      </a>
+      <a href="https://github.com/Kaviya04/Cash-Flow-Forecasting-" target="_blank" class="cl">
+        <span class="cll">Thesis Repo</span><span class="clv">Cash Flow Forecasting</span>
+      </a>
+      <a href="https://github.com/Kaviya04/financial-analysis-dashboard" target="_blank" class="cl">
+        <span class="cll">Dashboard</span><span class="clv">Financial Analysis</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft">&copy; 2026 Kaviya Gopal</span>
+  <span class="ft">Karlsruhe, Germany</span>
+</footer>
+
+<script>
+const tickers=[
+  {s:'XLF',v:'42.18',c:'+0.34%',u:true},{s:'SPY',v:'528.44',c:'+0.12%',u:true},
+  {s:'QQQ',v:'447.91',c:'-0.08%',u:false},{s:'GS',v:'491.20',c:'+0.61%',u:true},
+  {s:'JPM',v:'213.50',c:'+0.44%',u:true},{s:'EUR/USD',v:'1.0842',c:'-0.03%',u:false},
+  {s:'XLK',v:'208.30',c:'+0.19%',u:true},{s:'VIX',v:'14.82',c:'-2.10%',u:false},
+  {s:'DAX',v:'18,842',c:'+0.28%',u:true},{s:'DB',v:'16.74',c:'+0.55%',u:true},
+  {s:'BTC',v:'68,214',c:'+1.22%',u:true},{s:'IEF',v:'95.12',c:'-0.11%',u:false},
+];
+const el=document.getElementById('tk');
+el.innerHTML=[...tickers,...tickers].map(t=>
+  `<span class="tki"><span class="tks">${t.s}</span><span class="tkv">${t.v}</span><span class="${t.u?'tku':'tkd'}">${t.c}</span></span>`
+).join('');
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('sc',window.scrollY>60);
+});
+
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*90);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.rv,.tl').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
