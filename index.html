@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaviya Gopal — Data Analyst · Billing & Finance</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  --cream:   #f7f4ef;
+  --cream2:  #efeae2;
+  --navy:    #0a1628;
+  --navy2:   #152238;
+  --gold:    #c9a96e;
+  --gold2:   #a8864d;
+  --teal:    #0d7377;
+  --teal2:   #0a5c60;
+  --border:  #ddd8d0;
+  --border2: #e8e3db;
+  --text:    #3a3530;
+  --muted:   #8a8278;
+  --white:   #ffffff;
+  --green:   #2a7d4f;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* STATUS BAR */
+#statusbar {
+  background: var(--navy);
+  padding: 9px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sb-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sb-item.lit {
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sdot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #6dbf8a;
+  animation: sdpulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes sdpulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 56px;
+  height: 62px;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--gold2); font-style: italic; }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--navy); }
+
+.nav-cta {
+  padding: 8px 20px;
+  background: var(--teal);
+  color: var(--white) !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--teal2) !important; }
+
+/* HERO */
+#hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 88px 56px 72px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 72px;
+  align-items: start;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--teal);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 24px; height: 1px;
+  background: var(--teal);
+}
+
+h1.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+h1.hero-name em { font-style: italic; color: var(--gold2); }
+
+.hero-bio {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.82;
+  max-width: 520px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-bio strong { color: var(--navy); font-weight: 500; }
+
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn-teal {
+  padding: 12px 26px;
+  background: var(--teal);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-teal:hover { background: var(--teal2); }
+
+.btn-navy {
+  padding: 12px 26px;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-navy:hover { background: var(--navy2); }
+
+.btn-outline {
+  padding: 11px 26px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+
+/* BRIEF CARD */
+.brief-card {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.brief-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+}
+
+.bc-header {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.bc-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--teal);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.bc-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.28);
+}
+
+.bc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.055);
+}
+
+.bc-row:last-child { border-bottom: none; }
+
+.bc-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.32);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.bc-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.76rem;
+  color: var(--white);
+  font-weight: 500;
+  text-align: right;
+  max-width: 58%;
+}
+
+.bc-val.teal { color: #4ecdc4; }
+.bc-val.gold { color: var(--gold); }
+.bc-val.green { color: #6dbf8a; }
+
+/* METRICS */
+.metrics-bar {
+  background: var(--navy2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border);
+}
+
+.metrics-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid rgba(255,255,255,0.05);
+}
+
+.met {
+  padding: 30px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+.met:last-child { border-right: none; }
+
+.met-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.met-num sup { font-size: 1rem; color: var(--gold); vertical-align: super; }
+
+.met-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.56rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+.sec {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 80px 56px;
+}
+
+hr.div { border: none; border-top: 1px solid var(--border); }
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+}
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+}
+
+.sec-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.about-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  margin-bottom: 22px;
+}
+
+.about-h em { font-style: italic; color: var(--teal); }
+
+.ap {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  font-weight: 300;
+}
+
+.skills-block { margin-top: 32px; }
+
+.skills-cat {
+  margin-bottom: 18px;
+}
+
+.skills-cat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  padding: 4px 11px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.chip:hover { border-color: var(--teal); color: var(--teal); }
+.chip.hi { border-color: var(--teal); color: var(--teal); background: rgba(13,115,119,0.04); }
+
+/* stat boxes */
+.sboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.sbox {
+  background: var(--white);
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sbox::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 20px; right: 20px;
+  height: 2px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.sbox:hover::after { transform: scaleX(1); }
+
+.sbox-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.sbox-n sup { font-size: 1rem; color: var(--teal); vertical-align: super; }
+
+.sbox-l {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.56rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; gap: 2px; }
+
+.exp-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 34px 38px;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 44px;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--teal);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s;
+}
+
+.exp-card:hover { box-shadow: 0 4px 24px rgba(10,22,40,0.07); }
+.exp-card:hover::before { transform: scaleY(1); }
+
+.exp-card.featured { border-color: var(--teal); }
+.exp-card.featured::before { transform: scaleY(1); background: var(--teal); }
+
+.exp-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.exp-co {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.exp-loc {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+}
+
+.exp-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.exp-role-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--teal);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--teal);
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+
+.exp-desc {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.82;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.exp-bullets {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.exp-bullets li {
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.75;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+  font-weight: 300;
+}
+
+.exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 0.75rem;
+}
+
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.etag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.57rem;
+  padding: 3px 9px;
+  background: var(--cream2);
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border2);
+}
+
+.etag.hi { background: rgba(13,115,119,0.06); color: var(--teal); border-color: rgba(13,115,119,0.2); }
+
+/* PROJECTS */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+}
+
+.proj-card {
+  background: var(--white);
+  padding: 38px 34px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s;
+}
+
+.proj-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.proj-card:hover { box-shadow: 0 8px 40px rgba(10,22,40,0.09); z-index: 1; }
+.proj-card:hover::after { transform: scaleX(1); }
+
+.proj-card.primary::after { transform: scaleX(1); }
+.proj-card.primary { border-top: 3px solid var(--teal); }
+
+.proj-card.wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 56px;
+  align-items: start;
+}
+
+.proj-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.57rem;
+  color: var(--teal);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.proj-kicker::before {
+  content: '';
+  display: block;
+  width: 14px; height: 1px;
+  background: var(--teal);
+}
+
+.proj-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  margin-bottom: 12px;
+}
+
+.proj-desc {
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.8;
+  flex: 1;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.proj-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--teal);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(13,115,119,0.3);
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.proj-link:hover { gap: 14px; border-color: var(--teal); }
+.proj-link::after { content: '→'; }
+
+/* spec table */
+.spec-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  min-width: 210px;
+  align-self: start;
+}
+
+.spec-row {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.spec-row:last-child { border-bottom: none; }
+
+.spec-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.54rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.spec-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.award-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--gold2);
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border: 1px solid var(--gold);
+  background: rgba(201,169,110,0.06);
+  margin-top: auto;
+  width: fit-content;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.contact-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.contact-h em { font-style: italic; color: var(--teal); }
+
+.contact-p {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.82;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+.avail-block {
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-left: 3px solid var(--teal);
+}
+
+.avail-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--navy);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.avail-detail {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.clinks { display: flex; flex-direction: column; gap: 2px; }
+
+.cl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cl::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--teal);
+  transform: scaleY(0);
+  transition: transform 0.2s;
+}
+
+.cl:hover { background: var(--cream2); }
+.cl:hover::before { transform: scaleY(1); }
+
+.cll {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.clv {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--navy);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.cl:hover .clv { color: var(--teal); }
+.clv::after { content: '↗'; font-size: 0.65rem; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 24px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ft {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 1px;
+}
+
+.ft-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* REVEAL */
+.rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.rv.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #statusbar, nav, footer { padding-left: 24px; padding-right: 24px; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; padding: 56px 24px 56px; gap: 44px; }
+  .metrics-inner { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+  .sec { padding: 60px 24px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .exp-card { grid-template-columns: 1fr; gap: 12px; padding: 24px 20px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-card.wide { grid-template-columns: 1fr; gap: 24px; }
+  .sboxes { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- STATUS BAR -->
+<div id="statusbar">
+  <div style="display:flex;gap:28px;align-items:center;">
+    <span class="sb-item lit"><span class="sdot"></span>Available Aug 2026</span>
+    <span class="sb-item">Berlin / Karlsruhe, Germany</span>
+  </div>
+  <span class="sb-item">MSc Financial Engineering &middot; KIT &middot; Grade 1.8</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Kaviya <span>Gopal</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div>
+    <div class="hero-kicker">Data Analyst &middot; Billing &amp; Payments &middot; Finance</div>
+    <h1 class="hero-name">Kaviya<br><em>Gopal</em></h1>
+    <p class="hero-bio">
+      Finance-trained data analyst specialising in <strong>billing operations, payment reconciliation, and financial analytics pipelines.</strong> MSc Financial Engineering from KIT. Former JPMorgan CIB — 200+ daily trade reconciliations. Built SQL pipelines, Salesforce invoice dashboards, and AR reporting workflows at Destination Solutions. Mercedes-Benz AI Challenge winner 2024.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-teal">View Projects</a>
+      <a href="https://www.linkedin.com/in/kaviya-gopal-a9a6361a0/" target="_blank" class="btn-navy">LinkedIn ↗</a>
+      <a href="https://github.com/Kaviya04" target="_blank" class="btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+
+  <div class="brief-card">
+    <div class="bc-header">
+      <div class="bc-title">Candidate Brief</div>
+      <div class="bc-sub">Junior Data Analyst &middot; Billing &amp; Payments</div>
+    </div>
+    <div class="bc-row"><span class="bc-key">Name</span><span class="bc-val">Kaviya Gopal</span></div>
+    <div class="bc-row"><span class="bc-key">Degree</span><span class="bc-val">MSc FinEng &middot; KIT &middot; 1.8</span></div>
+    <div class="bc-row"><span class="bc-key">Core Skill</span><span class="bc-val teal">SQL &middot; Reconciliation &middot; AR</span></div>
+    <div class="bc-row"><span class="bc-key">Prior Employer</span><span class="bc-val">JPMorgan Chase CIB</span></div>
+    <div class="bc-row"><span class="bc-key">Reconciliation</span><span class="bc-val">200+ daily &middot; JPMorgan</span></div>
+    <div class="bc-row"><span class="bc-key">Pipelines Built</span><span class="bc-val">Snowflake &middot; Python &middot; Tableau</span></div>
+    <div class="bc-row"><span class="bc-key">Dashboards</span><span class="bc-val">Salesforce &middot; Tableau &middot; Alteryx</span></div>
+    <div class="bc-row"><span class="bc-key">Location</span><span class="bc-val">Karlsruhe &rarr; Berlin, DE</span></div>
+    <div class="bc-row"><span class="bc-key">Available</span><span class="bc-val green">August 2026</span></div>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="met">
+      <div class="met-num">200<sup>+</sup></div>
+      <div class="met-label">Daily Reconciliations (JPMorgan)</div>
+    </div>
+    <div class="met">
+      <div class="met-num">€50<sup>k+</sup></div>
+      <div class="met-label">Weekly Revenue Tracked</div>
+    </div>
+    <div class="met">
+      <div class="met-num">40<sup>%</sup></div>
+      <div class="met-label">Manual Effort Reduced</div>
+    </div>
+    <div class="met">
+      <div class="met-num">150<sup>+</sup></div>
+      <div class="met-label">Transactions Processed Weekly</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<hr class="div">
+<div id="about" class="sec">
+  <div class="sec-head">
+    <h2 class="sec-title">About</h2>
+    <span class="sec-num">01 / 04</span>
+  </div>
+  <div class="about-grid">
+    <div>
+      <h3 class="about-h">Finance background. <em>Data-first</em> execution.</h3>
+      <p class="ap">I'm a financial engineer and data analyst with direct experience in the workflows that sit at the core of billing and payments operations — reconciliation, discrepancy resolution, invoice analytics, and financial reporting for non-technical stakeholders.</p>
+      <p class="ap">At JPMorgan CIB, I managed 200+ daily position reconciliations across derivatives, FX, fixed income, and cash products. At Destination Solutions, I built SQL pipelines in Snowflake to reconcile multi-platform OTA data, maintained Salesforce invoice dashboards for AR tracking, and automated the financial reporting workflow that saved the Finance team ~40% of manual effort weekly.</p>
+      <p class="ap">My MSc in Financial Engineering from KIT (grade 1.8) gives me the analytical depth to understand what the numbers mean — not just process them. I communicate findings clearly to both technical teams and non-technical finance stakeholders.</p>
+      <div class="skills-block">
+        <div class="skills-cat">
+          <div class="skills-cat-label">Core — Directly Relevant</div>
+          <div class="chips">
+            <span class="chip hi">SQL (Snowflake)</span>
+            <span class="chip hi">Payment Reconciliation</span>
+            <span class="chip hi">AR &amp; Billing Ops</span>
+            <span class="chip hi">Salesforce Dashboards</span>
+            <span class="chip hi">Tableau</span>
+            <span class="chip hi">Python (pandas)</span>
+            <span class="chip hi">Excel (Advanced)</span>
+            <span class="chip hi">Data Discrepancy Resolution</span>
+          </div>
+        </div>
+        <div class="skills-cat">
+          <div class="skills-cat-label">Additional</div>
+          <div class="chips">
+            <span class="chip">Alteryx</span>
+            <span class="chip">AWS S3</span>
+            <span class="chip">Google Sheets</span>
+            <span class="chip">Databricks (learning)</span>
+            <span class="chip">Financial Modelling</span>
+            <span class="chip">R</span>
+            <span class="chip">JIRA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sboxes rv">
+        <div class="sbox"><div class="sbox-n">200<sup>+</sup></div><div class="sbox-l">Daily recons · JPMorgan</div></div>
+        <div class="sbox"><div class="sbox-n">40<sup>%</sup></div><div class="sbox-l">Reporting effort saved</div></div>
+        <div class="sbox"><div class="sbox-n">1.8</div><div class="sbox-l">MSc grade · KIT</div></div>
+        <div class="sbox"><div class="sbox-n">4<sup>+</sup></div><div class="sbox-l">Data platforms integrated</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<hr class="div">
+<div id="experience" class="sec">
+  <div class="sec-head">
+    <h2 class="sec-title">Experience</h2>
+    <span class="sec-num">02 / 04</span>
+  </div>
+  <div class="exp-list">
+
+    <!-- Destination Solutions — FEATURED as most relevant -->
+    <div class="exp-card featured rv">
+      <div>
+        <div class="exp-period">Oct 2024 – Apr 2025</div>
+        <div class="exp-co">Destination Solutions</div>
+        <div class="exp-loc">Munich, DE</div>
+      </div>
+      <div>
+        <div class="exp-role-badge">Most Relevant</div>
+        <div class="exp-role">Working Student — Business Intelligence</div>
+        <ul class="exp-bullets">
+          <li>Wrote and maintained SQL queries (Snowflake) for data extraction, transformation, and reconciliation across multiple OTA platform data sources — identifying and resolving data discrepancies across Booking.com, Airbnb, Holidu, and Check24.</li>
+          <li>Built invoice analytics dashboards in Salesforce to track customer billing status, open items, and payment trends — supporting the Finance team's AR and collections processes with real-time visibility into outstanding invoices.</li>
+          <li>Automated financial analytics pipelines (Python, Snowflake, Tableau) processing €50,000+ in weekly booking revenue and 150+ transactions, reducing manual reporting effort by ~40%.</li>
+          <li>Translated raw dataset outputs and discrepancy findings into clear business recommendations for non-technical Finance and Operations stakeholders.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag hi">SQL · Snowflake</span>
+          <span class="etag hi">Payment Reconciliation</span>
+          <span class="etag hi">Salesforce · AR</span>
+          <span class="etag hi">Invoice Analytics</span>
+          <span class="etag hi">Tableau</span>
+          <span class="etag">Python</span>
+          <span class="etag">Variance Analysis</span>
+          <span class="etag">Multi-platform Data</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JPMorgan -->
+    <div class="exp-card rv">
+      <div>
+        <div class="exp-period">Aug 2021 – Jul 2022</div>
+        <div class="exp-co">JPMorgan Chase CIB</div>
+        <div class="exp-loc">India</div>
+      </div>
+      <div>
+        <div class="exp-role">Financial Analyst — Middle Office (CIB)</div>
+        <ul class="exp-bullets">
+          <li>Managed financial position reconciliations across derivatives, FX, fixed income, and cash products — ensuring 100% accuracy of client investment statements across global banking mandates.</li>
+          <li>Built KPI/KRI dashboards in Alteryx and Tableau for senior CIB management across complex, multi-asset financial data.</li>
+          <li>Gained deep understanding of banking operations, financial instrument lifecycles, and credit/settlement workflows across institutional client portfolios.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag hi">Position Reconciliation</span>
+          <span class="etag">Derivatives · FX</span>
+          <span class="etag">Fixed Income</span>
+          <span class="etag">Alteryx</span>
+          <span class="etag">Tableau</span>
+          <span class="etag">KPI Dashboards</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAIN Pro -->
+    <div class="exp-card rv">
+      <div>
+        <div class="exp-period">Jun – Aug 2025</div>
+        <div class="exp-co">GAIN Pro</div>
+        <div class="exp-loc">Frankfurt, DE</div>
+      </div>
+      <div>
+        <div class="exp-role">Private Equity Analyst — Internship</div>
+        <ul class="exp-bullets">
+          <li>Conducted financial analysis across 60+ companies — evaluating capital structures, credit profiles, M&amp;A histories, and operational drivers to support deal evaluation for institutional PE clients.</li>
+          <li>Developed investment theses and strategic assessments using AI-supported research tools, translating complex financial data into actionable client recommendations.</li>
+          <li>Built client-facing company profiles and deal summaries for senior PE stakeholders.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="etag">Capital Structure</span>
+          <span class="etag">Credit Analysis</span>
+          <span class="etag">Financial Analysis</span>
+          <span class="etag">Investment Theses</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<hr class="div">
+<div id="projects" class="sec">
+  <div class="sec-head">
+    <h2 class="sec-title">Projects</h2>
+    <span class="sec-num">03 / 04</span>
+  </div>
+  <div class="proj-grid">
+
+    <!-- Payment Reconciliation — FEATURED -->
+    <a href="https://github.com/Kaviya04/payment-reconciliation-engine" target="_blank" class="proj-card primary wide rv">
+      <div>
+        <div class="proj-kicker">Featured Project &middot; Billing Ops</div>
+        <h3 class="proj-title">Payment Reconciliation Engine</h3>
+        <p class="proj-desc">A glimpse of billing operations in code — built to demonstrate core reconciliation logic: transaction matching across sources, discrepancy detection, exception flagging, and structured output for finance review. Directly mirrors the reconciliation workflows used in billing and payments teams. Designed to process multi-source transaction data, identify mismatches, and surface actionable exception reports for finance stakeholders.</p>
+        <span class="proj-link">View on GitHub</span>
+      </div>
+      <div class="spec-table">
+        <div class="spec-row"><div class="spec-key">Type</div><div class="spec-val">Billing Ops</div></div>
+        <div class="spec-row"><div class="spec-key">Core Function</div><div class="spec-val">Transaction Matching</div></div>
+        <div class="spec-row"><div class="spec-key">Stack</div><div class="spec-val" style="font-size:.88rem">Python &middot; SQL &middot; pandas</div></div>
+        <div class="spec-row"><div class="spec-key">Output</div><div class="spec-val" style="font-size:.88rem">Exception Reports</div></div>
+        <div class="spec-row"><div class="spec-key">Relevant To</div><div class="spec-val" style="font-size:.88rem">AR &middot; Payments &middot; Finance</div></div>
+      </div>
+    </a>
+
+    <!-- Financial Dashboard -->
+    <a href="https://github.com/Kaviya04/financial-analysis-dashboard" target="_blank" class="proj-card rv">
+      <div class="proj-kicker">Project &middot; Financial Analytics</div>
+      <h3 class="proj-title">Financial Analysis Dashboard</h3>
+      <p class="proj-desc">Interactive analytics dashboard built on real Bundesanzeiger financial data. Features variance analysis, rolling KPI tracking, and scenario modelling — designed to surface actionable insights for Finance leadership. Demonstrates full pipeline from raw data ingestion to executive-level visualization, with stakeholder-friendly output for non-technical audiences.</p>
+      <span class="proj-link">View on GitHub</span>
+    </a>
+
+    <!-- Mercedes Award -->
+    <div class="proj-card rv" style="cursor:default;">
+      <div class="proj-kicker">Award &middot; 2024</div>
+      <h3 class="proj-title">Mercedes-Benz AI Innovation Challenge</h3>
+      <p class="proj-desc">1st place among graduate-level competitors. Designed an AI-based root cause analysis tool using Python for automated downtime documentation — translating unstructured operational data into structured, actionable reporting for non-technical stakeholders.</p>
+      <div class="award-flag">&#127942; First Place &middot; 2024</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<hr class="div">
+<div id="contact" class="sec">
+  <div class="sec-head">
+    <h2 class="sec-title">Contact</h2>
+    <span class="sec-num">04 / 04</span>
+  </div>
+  <div class="contact-grid">
+    <div class="rv">
+      <h2 class="contact-h">Let's talk <em>data.</em></h2>
+      <p class="contact-p">Open to roles in data analytics, billing operations, and financial reporting across Germany. Available from August 2026. Open to internships and full-time positions — including Berlin.</p>
+      <div class="avail-block">
+        <div class="avail-status"><span class="sdot"></span>Available from August 2026</div>
+        <div class="avail-detail">Based in Karlsruhe &middot; Open to Berlin and Germany-wide</div>
+      </div>
+    </div>
+    <div class="clinks rv">
+      <a href="https://www.linkedin.com/in/kaviya-gopal-a9a6361a0/" target="_blank" class="cl">
+        <span class="cll">LinkedIn</span><span class="clv">Kaviya Gopal</span>
+      </a>
+      <a href="mailto:kaviyaezhil2001@gmail.com" class="cl">
+        <span class="cll">Email</span><span class="clv">kaviyaezhil2001@gmail.com</span>
+      </a>
+      <a href="https://github.com/Kaviya04/payment-reconciliation-engine" target="_blank" class="cl">
+        <span class="cll">Project · Reconciliation</span><span class="clv">Payment Reconciliation Engine</span>
+      </a>
+      <a href="https://github.com/Kaviya04/financial-analysis-dashboard" target="_blank" class="cl">
+        <span class="cll">Project · Dashboard</span><span class="clv">Financial Analysis Dashboard</span>
+      </a>
+      <a href="https://github.com/Kaviya04" target="_blank" class="cl">
+        <span class="cll">GitHub</span><span class="clv">Kaviya04</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="ft-logo">Kaviya Gopal</span>
+  <span class="ft">&copy; 2026 &middot; Karlsruhe, Germany</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 90);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
